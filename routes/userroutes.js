@@ -1,0 +1,11 @@
+const express=require('express');
+const verifyToken=require('../middleware/auth');
+const {login,signup,getUser, authUser,deleteuser,updateuser}=require('../controller/usercontroller');
+const router=express.Router();
+router.post('/usersignup',signup);
+router.post('/userlogin',login);
+router.get('/userget',verifyToken,getUser);
+router.get('/check',verifyToken,authUser);
+router.put('/updateuser/:id',updateuser);
+router.delete('/deleteuser/:id',deleteuser);
+module.exports=router;

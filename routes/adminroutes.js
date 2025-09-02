@@ -1,0 +1,11 @@
+const express=require('express');
+const verifyToken=require('../middleware/auth');
+const {login,signup,getAdmin, authAdmin,UpdateAdmin,deleteAdmin}=require('../controller/admincontroller');
+const router=express.Router();
+router.post('/Adminsignup',signup);
+router.post('/Adminlogin',login);
+router.get('/Adminget',verifyToken,getAdmin);
+router.get('/check',verifyToken,authAdmin);
+router.put('/updateadmin/:id',UpdateAdmin);
+router.delete('/deleteadmin/:id',deleteAdmin);
+module.exports=router;
