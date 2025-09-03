@@ -1,6 +1,6 @@
 const Admin = require('../Models/Adminmodel');
 const { hashPassword, comparePassword } = require('../utils/bcrypt');
-const { generateToken, GenerateToken } = require('../utils/jwt');
+const {  GenerateToken } = require('../utils/jwt');
 //Admin signup
 exports.signup = async (req, res) => {
     try {
@@ -109,6 +109,7 @@ exports.authAdmin = (req, res) => {
         }
         return res.status(200).json({
             success: true,
+            
             message: "Authentication successfully"
         });
     } catch (e) {

@@ -45,5 +45,9 @@ const userSchema=new mongoose.Schema({
         required:true,
         default:"user"
     },
+    tokenVersion: {
+        type: Number,
+        default: 1
+    }
 },{timestamps:true});
 module.exports=mongoose.model('User',userSchema);

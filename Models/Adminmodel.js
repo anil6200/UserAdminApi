@@ -14,6 +14,10 @@ const AdminSchema=new mongoose.Schema({
         required:true,
         default:'admin'
     },
+    tokenVersion: {
+        type: Number,
+        default: 1
+    }
 },{timestamps:true});
 
 module.exports=mongoose.model('Admin',AdminSchema);
